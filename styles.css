@@ -66,11 +66,11 @@ button {
 
 .message {
   margin-top: 20px;
-  font-size: clamp(0.8rem, 3vw, 1.5rem); /* Escala el tamaño del texto del mensaje */
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Aumentamos el tamaño del texto */
   color: #ff4d6d;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #ff4d6d;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el texto que excede el contenedor */
+  border-right: 2px solid #ff4d6d; /* Simula el cursor de escritura */
 }
 
 #restartButton {
