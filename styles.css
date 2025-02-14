@@ -1,0 +1,90 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los elementos respeten su tamaño */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f9c2d6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura mínima de la pantalla */
+}
+
+h1 {
+  color: #ff4d6d;
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Escala el tamaño del texto según el dispositivo */
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px; /* Espacio entre los botones */
+  flex-wrap: wrap; /* Permite que los botones se ajusten en pantallas pequeñas */
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Escala el tamaño del texto del botón */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#yesButton {
+  background-color: #ff7f9e;
+  color: white;
+}
+
+#yesButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 127, 158, 0.8);
+}
+
+#noButton {
+  background-color: #ff4d6d;
+  color: white;
+  position: relative; /* Necesario para moverlo con coordenadas */
+}
+
+#noButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 77, 109, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  margin-top: 20px;
+  font-size: clamp(0.8rem, 3vw, 1.5rem); /* Escala el tamaño del texto del mensaje */
+  color: #ff4d6d;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ff4d6d;
+}
+
+#restartButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Escala el tamaño del texto del botón */
+  background-color: #ff7f9e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#restartButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 127, 158, 0.8);
+}
