@@ -18,7 +18,7 @@ body {
 
 h1 {
   color: #ff4d6d;
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Escala el tamaño del texto según el dispositivo */
+  font-size: clamp(2rem, 6vw, 4rem); /* Título más grande */
   margin-bottom: 20px;
   transition: all 0.3s ease-in-out;
 }
@@ -32,7 +32,7 @@ h1 {
 
 button {
   padding: 10px 20px;
-  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Escala el tamaño del texto del botón */
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Botones más grandes */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -66,17 +66,30 @@ button {
 
 .message {
   margin-top: 20px;
-  font-size: clamp(1.5rem, 5vw, 3rem); /* Aumentamos el tamaño del texto */
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Mensaje más grande */
   color: #ff4d6d;
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-  overflow: hidden; /* Oculta el texto que excede el contenedor */
-  border-right: 2px solid #ff4d6d; /* Simula el cursor de escritura */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #ff4d6d;
+}
+
+/* Estilo para la imagen */
+#finalImage {
+  margin-top: 20px; /* Espacio superior */
+  width: 80%; /* Ancho relativo al contenedor */
+  max-width: 300px; /* Tamaño máximo de la imagen */
+  height: auto; /* Mantiene la proporción de aspecto */
+  border-radius: 10px; /* Borde redondeado para un diseño más moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para destacar la imagen */
+  display: block; /* Necesario para centrarla */
+  margin-left: auto; /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
 }
 
 #restartButton {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: clamp(0.8rem, 3vw, 1.2rem); /* Escala el tamaño del texto del botón */
+  font-size: clamp(1rem, 4vw, 1.5rem); /* Botón de reinicio más grande */
   background-color: #ff7f9e;
   color: white;
   border: none;

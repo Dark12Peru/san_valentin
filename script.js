@@ -4,6 +4,7 @@ const yesButton = document.getElementById('yesButton');
 const question = document.getElementById('question');
 const message = document.getElementById('message');
 const restartButton = document.getElementById('restartButton');
+const finalImage = document.getElementById('finalImage');
 
 // Lista de mensajes interactivos para el botón "No"
 const messages = [
@@ -53,7 +54,7 @@ const presentationMessages = [
   "¿Estas segura?",
   "Yap....",
   "Ya bueno, quería decir que...",
-  "Feliz San Valentín :0",
+  "Feliz San Valentín :=",
   "Bueno gracias por ser una amiga",
   "Antes de que vuele alto",
   "Y sea un fantasmita",
@@ -79,13 +80,12 @@ const presentationMessages = [
 
 // Función para mover el botón "No" aleatoriamente
 function moveButton() {
-  const screenWidth = window.innerWidth - noButton.offsetWidth; // Restamos el ancho del botón
-  const screenHeight = window.innerHeight - noButton.offsetHeight; // Restamos la altura del botón
+  const screenWidth = window.innerWidth - noButton.offsetWidth;
+  const screenHeight = window.innerHeight - noButton.offsetHeight;
 
   const randomX = Math.random() * screenWidth;
   const randomY = Math.random() * screenHeight;
 
-  // Aplicamos las nuevas coordenadas con transición suave
   noButton.style.position = 'absolute';
   noButton.style.left = `${randomX}px`;
   noButton.style.top = `${randomY}px`;
@@ -121,23 +121,14 @@ function showPresentation(messages, index = 0) {
       }, 1500);
     });
   } else {
-    restartButton.classList.remove('hidden');
+    // Mostramos la imagen final
+    finalImage.classList.remove('hidden');
+
+    // Mostramos el botón de reinicio después de un breve retraso
+    setTimeout(() => {
+      restartButton.classList.remove('hidden');
+    }, 1000); // Esperamos 1 segundo antes de mostrar el botón
   }
-}
-
-// Función para reiniciar la experiencia
-function restartExperience() {
-  question.textContent = "¿Quieres dar click?";
-  question.classList.remove('hidden');
-  yesButton.classList.remove('hidden');
-  noButton.classList.remove('hidden');
-  message.textContent = "";
-  message.classList.add('hidden');
-  restartButton.classList.add('hidden');
-
-  noButton.style.position = 'relative';
-  noButton.style.left = '0';
-  noButton.style.top = '0';
 }
 
 // Agregar evento al botón "No"
@@ -151,10 +142,15 @@ noButton.addEventListener('click', (event) => {
 yesButton.addEventListener('click', () => {
   const initialText = "¡Sabía que dirías que sí! ❤️";
 
+  // Ocultamos la imagen al comenzar la presentación
+  finalImage.classList.add('hidden');
+
+  // Ocultamos el título y los botones
   question.classList.add('hidden');
   yesButton.classList.add('hidden');
   noButton.classList.add('hidden');
 
+  // Mostramos el mensaje inicial con la animación de tipeo
   message.classList.remove('hidden');
   typeWriter(initialText, message, 50, () => {
     setTimeout(() => {
@@ -165,4 +161,21 @@ yesButton.addEventListener('click', () => {
 });
 
 // Agregar evento al botón de reinicio
-restartButton.addEventListener('click', restartExperience);
+restartButton.addEventListener('click', () => {
+  // Restauramos los elementos iniciales
+  question.textContent = "¿Quieres dar click?";
+  question.classList.remove('hidden');
+  yesButton.classList.remove('hidden');
+  noButton.classList.remove('hidden');
+  message.textContent = "";
+  message.classList.add('hidden');
+  restartButton.classList.add('hidden');
+
+  // Reiniciamos la posición del botón "No"
+  noButton.style.position = 'relative';
+  noButton.style.left = '0';
+  noButton.style.top = '0';
+
+  // Mostramos la imagen nuevamente
+  finalImage.classList.remove('hidden');
+});
