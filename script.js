@@ -53,7 +53,7 @@ const presentationMessages = [
   "¿Estas segura?",
   "Yap....",
   "Ya bueno, quería decir que...",
-  "Feliz San Valentín :=",
+  "Feliz San Valentín :0",
   "Bueno gracias por ser una amiga",
   "Antes de que vuele alto",
   "Y sea un fantasmita",
